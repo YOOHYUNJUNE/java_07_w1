@@ -14,7 +14,6 @@ function App() {
       <Nav></Nav>
       {/* props: 부모 컴포넌트가 자식에게 전달하는 값 */}
       <Article text="안녕하세요"></Article>
-      
       <Introduce name="유현준" gender="남"></Introduce>
       <Introduce name="유현준" gender="남"></Introduce>
       <Introduce name="유현준" gender="남"></Introduce>
