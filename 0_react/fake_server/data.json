@@ -1,29 +1,14 @@
 {
-    "products": [
-      {
-        "id": 1,
-        "name": "Laptop",
-        "price": 12000
-      },
-      {
-        "id": 2,
-        "name": "Smartphone",
-        "price": 50000
-      },
-      {
-        "id": 3,
-        "name": "Headphones",
-        "price": 8414000
-      },
-      {
-        "id": 4,
-        "name": "Smartwatch",
-        "price": 300000
-      },
-      {
-        "id": 5,
-        "name": "Tablet",
-        "price": 200000
-      }
+    "products" : [
+        {"name": "후라이드 치킨", "price": 8000 },
+        {"name": "양념 치킨", "price": 9000 },
+        {"name": "간장 치킨", "price": 8500 },
+        {"name": "마라 치킨", "price": 9000 },
+        {"name": "훈제 치킨", "price": 9000 },
+        {"name": "떡볶이", "price": 3000 },
+        {"name": "오뎅", "price": 1000 },
+        {"name": "새우 튀김", "price": 1000 },
+        {"name": "오징어 튀김", "price": 1000 }
     ]
-  }
+
+}
