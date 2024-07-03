@@ -5,12 +5,17 @@ const Header = () => {
     return ( 
         <>
         <header>
-            <a href="/">메인 로고</a>
+            <div className="title">
+                <a href="/"><h1>title</h1></a>    
+            </div>
             <Nav></Nav>
         </header>
         </>
-        
      );
 }
+
+
+
+
 
 export default Header;

@@ -4,11 +4,16 @@ import Header from './components/layout/Header';
 import Product from './components/Product';
 import { Routes, Route, BrowserRouter } from "react-router-dom" // 경로 변경을 도와주는 모듈
 import ProdDetail from './components/product/ProdDetail';
+import styled from 'styled-components';
+
 
 function App() {
   return (
       <div className="App">
         <Header />
+
+        {/* <Title>안녕하세요.</Title> */}
+
         <Routes>
           <Route path='/' element={<h1>홈</h1>} />
           <Route path='/about' element={<h1>정보</h1>} />
@@ -20,5 +25,12 @@ function App() {
       </div>
   );
 }
+
+// const Title = styled.h1`
+//   font-size: 1.5em;
+//   text-align: center;
+//   color: #BF4F74;
+// `;
+
 
 export default App;

@@ -3,7 +3,7 @@
     {
       "name": "양념 치킨",
       "price": 9000,
-      "description": "맛있음",
+      "description": "맛있음~",
       "id": "1"
     },
     {
@@ -90,13 +90,25 @@
       "id": "7273"
     },
     {
-      "id": "1639",
+      "name": "",
+      "price": 0,
+      "description": "",
+      "id": "1639"
+    },
+    {
+      "id": "04af",
       "name": "",
       "description": "",
       "price": 0
     },
     {
-      "id": "04af",
+      "id": "4b00",
+      "name": "",
+      "description": "",
+      "price": 0
+    },
+    {
+      "id": "0d31",
       "name": "",
       "description": "",
       "price": 0
