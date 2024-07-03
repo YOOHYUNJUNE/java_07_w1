@@ -1,6 +1,7 @@
 import axios from "axios";
 import {useState, useEffect} from "react";
 import ProdInput from "./product/ProdInput";
+import ProdBox from "./product/ProdBox";
 
 const Product = () => {
 
@@ -58,23 +59,7 @@ const Product = () => {
                 {
                     products.map(prod => {
                         return (
-                            <div style={{
-                                textAlign: 'left',
-                                display: 'flex',
-                                flexDirection: 'column',
-                                width: '30%',
-                                padding: '15px',
-                                }}>
-            
-                                <div style={{
-                                    width: '100%',
-                                    height: '100px',
-                                    backgroundColor: 'lightgray',
-                                }}>
-                                    <div>{prod.name}</div>
-                                    <div>{prod.price}</div>
-                                </div>
-                            </div>
+                            <ProdBox key={prod.id} prod={prod} products={products} setProducts={setProducts}></ProdBox>
                         )
                     })
                 }
