@@ -38,7 +38,7 @@ const Product = () => {
         }
     }
     
-    useEffect(() => {getProducts()}, []);
+    useEffect(() => {getProducts()}, []); // [product]가 있을 경우 무한 반복
     
 
 
