@@ -17,9 +17,7 @@ function App() {
     
     <div>
       <Header />
-      {/* <Home></Home> */}
       <Main />
-      {/* <Login></Login> */}
 
     </div>
     

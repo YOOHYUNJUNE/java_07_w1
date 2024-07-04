@@ -9,6 +9,7 @@ const useInputs = (initForm) => {
         setForm(form => ({...form, [name]: value}));
     }
 
+    // input 초기화
     const handleReset = () => {
         setForm(initForm)
     }

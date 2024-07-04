@@ -32,7 +32,7 @@ const Header = () => {
         </StyledHeader>
      );
 }
- 
+
 const StyledHeader = styled.header`
     display: flex;
     justify-content: space-between; // 홈 아이콘과 네비 메뉴들을 떨어뜨림

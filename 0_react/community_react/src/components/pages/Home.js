@@ -5,7 +5,6 @@ const Home = () => {
 
     const [detail, setDetail] = useState('');
 
-    
     const navigate = useNavigate();
     const handlePageMove = () => {
         // Link와 같은 동작

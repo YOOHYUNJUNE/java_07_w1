@@ -6,6 +6,7 @@ import SignUp from "../pages/SignUp";
 
 const Main = () => {
     return ( 
+        <StyledMain>
         <Routes>
             <Route path='/' element={<Home></Home>}></Route>
 
@@ -19,13 +20,12 @@ const Main = () => {
             <Route element={<UserRoute />}>
                 <Route path='/logout' element={<h1>로그아웃</h1>}></Route>
                 <Route path='/info' element={<h1>유저 인포</h1>}></Route>
-
             </Route>
-
 
             <Route path='*' element={<h1>없는 경로ㅎ</h1>}></Route>
 
         </Routes>
+        </StyledMain>
      );
 }
 
@@ -54,7 +54,7 @@ const UserRoute = () => {
 
 const StyledMain = styled.main`
     width: 70vw;
-    margin: auto;
+    margin: 0 auto;
 `
 
 

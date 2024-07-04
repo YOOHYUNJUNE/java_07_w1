@@ -2,6 +2,7 @@ import { useState } from "react";
 import styled from "styled-components";
 import useInputs from "../../hooks/useInputs";
 import axios from "axios";
+import { Button } from "../ui/Button";
 
 const Login = () => {
 
@@ -17,7 +18,7 @@ const Login = () => {
     
     // 가짜 데이터이므로 (POST가 아닌) GET 방식으로 로그인 진행
     const handleLogin = async() => {
-        const url = `http://localhost:4885/users?email=${email}&password=${password}`;
+        const url = `${process.env.REACT_APP_SERVER_ADDR}/users?email=${email}&password=${password}`;
         try {
             const res = await axios.get(url);
             console.log(res);
@@ -43,7 +44,7 @@ const Login = () => {
                     <input type="email" name="email" value={email} onChange={handleChange}></input>
                     <input type="password" name="password" value={password} onChange={handleChange}></input>
                 </div>
-                <button onClick={handleLogin}>로그인</button>
+                <Button color="#a151e5" onClick={handleLogin}>로그인</Button>
                 {/* <button onClick={handleReset}>초기화</button> */}
 
             </StyledLoginBox>
