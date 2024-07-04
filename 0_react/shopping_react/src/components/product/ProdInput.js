@@ -5,7 +5,7 @@ import styled from "styled-components";
 import axios from "axios";
 import { useState } from "react";
 
-const ProdInput = ({products, setProducts}) => {
+const ProdInput = ({dispatch}) => {
     
     // 상품 추가 state
     const [newProduct, setNewProduct] = useState({name: "", description: "", price: 0});
@@ -30,8 +30,8 @@ const ProdInput = ({products, setProducts}) => {
         try {
             const res = await axios.post('http://localhost:8080/products', newProduct);
             const newProd = res.data
-            setProducts([...products, newProd])
-            
+            // setProducts([...products, newProd])
+            dispatch({type: "ADD_PRODUCT", payload: newProd});
         } catch(err) {
             console.error(err)
         }

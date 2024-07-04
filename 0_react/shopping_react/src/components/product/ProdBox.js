@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 // 수정, 삭제버튼
 
-const ProdBox = ({prod, products, setProducts}) => {
+const ProdBox = ({prod, dispatch}) => {
 
     // 수정 모드
     const [isUpdateMode, setIsUpdateMode] = useState(false);
@@ -40,12 +40,13 @@ const ProdBox = ({prod, products, setProducts}) => {
             const editProduct = {...product, id: prod.id}
             
             // put: 전체 변경 / patch: 일부 변경
-            await axios.put(`http://localhost:8080/products/${prod.id}`, editProduct)
-            
+            const res = await axios.put(`http://localhost:8080/products/${prod.id}`, editProduct)
 
             // 즉시 반영
-            const updateProducts = products.map(p => (p.id === prod.id ? editProduct : p));
-            setProducts(updateProducts);
+            // const updateProducts = products.map(p => (p.id === prod.id ? editProduct : p));
+            // setProducts(updateProducts);
+            dispatch({type: "EDIT_PRODUCT", payload: editProduct})
+
 
             setIsUpdateMode(false)
         } catch (err) {
@@ -59,10 +60,11 @@ const ProdBox = ({prod, products, setProducts}) => {
         try {
             const res = await axios.delete(`http://localhost:8080/products/${prod.id}`);
             // 즉시 반영
-            const newProducts = products.filter(p => {
-                return p.id != prod.id
-            });
-            setProducts(newProducts)
+            dispatch({type: "DELETE_PRODUCT", payload: prod.id})
+            // const newProducts = products.filter(p => {
+            //     return p.id != prod.id
+            // });
+            // setProducts(newProducts)
 
         } catch (err) {
             console.error(err)
@@ -77,7 +79,7 @@ const ProdBox = ({prod, products, setProducts}) => {
             flexDirection: 'column',
             width: '30%',
             padding: '10px',
-            }}> test1
+            }}> 
 
         <div style={{
             width: '100%',
@@ -85,7 +87,7 @@ const ProdBox = ({prod, products, setProducts}) => {
             backgroundColor: 'lightgray',
             borderRadius: '30px',
             padding: '5px'
-            }}> test2
+            }}> 
 
                 {
                     // 수정: isUpdateMode가 false(현재) -> true(누를 경우) 수정 모드

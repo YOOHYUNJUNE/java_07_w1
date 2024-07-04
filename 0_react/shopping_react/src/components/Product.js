@@ -1,13 +1,28 @@
 import axios from "axios";
-import {useState, useEffect} from "react";
+import { useState, useEffect, useReducer } from "react";
 import ProdInput from "./product/ProdInput";
 import ProdBox from "./product/ProdBox";
 
+const productReducer = (state, action) => {
+
+    switch(action.type) {
+        // state: []
+        // action : {type: 'SET_PRODUCTS', payload: data}
+        case 'SET_PRODUCTS' :
+            return action.payload;
+        case 'ADD_PRODUCT' :
+            return [...state, action.payload];
+        case 'EDIT_PRODUCT' :
+            return state.map(p => (action.payload.id == p.id ? action.payload : p))
+        case "DELETE_PRODUCT" :
+            return state.filter(p => (p.id != action.payload))
+    }
+}
 const Product = () => {
 
-
-
-    const [products, setProducts] = useState([]);
+    // const [products, setProducts] = useState([]);
+    // useReducer
+    const [products, dispatch] = useReducer(productReducer, [])
 
     // 로딩화면 함수
     const [loading, setLoading] = useState(true);
@@ -27,9 +42,8 @@ const Product = () => {
             const res = await axios.get('http://localhost:8080/products')
             // 로딩화면 구현
             setLoading(false)
-
             const data = res.data;
-            setProducts(data);
+            dispatch({type: 'SET_PRODUCTS', payload: data}); // 초기값 세팅
         } catch (err) {
             console.error(err);
 
@@ -59,12 +73,12 @@ const Product = () => {
                 {
                     products.map(prod => {
                         return (
-                            <ProdBox key={prod.id} prod={prod} products={products} setProducts={setProducts}></ProdBox>
+                            <ProdBox key={prod.id} prod={prod} dispatch={dispatch}></ProdBox>
                         )
                     })
                 }
             </div>
-            <ProdInput products={products} setProducts={setProducts}></ProdInput>
+            <ProdInput dispatch={dispatch}></ProdInput>
         </main>
      );
 }
