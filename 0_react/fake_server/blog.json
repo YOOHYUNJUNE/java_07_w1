@@ -1,0 +1,53 @@
+{
+    "users": [
+        {
+            "id": "1",
+            "email": "IU@naver.com",
+            "nickname": "아이유",
+            "password": "1234"
+        },
+        {
+            "id": "2",
+            "email": "YUN@naver.com",
+            "nickname": "윤종신",
+            "password": "1234"
+        }
+    ],
+    "posts": [
+        {
+            "id": "1",
+            "contents": "안녕하세요.",
+            "like": 0,
+            "img": "",
+            "userId": "1"
+        },
+        {
+            "id": "2",
+            "contents": "내일 신곡 나옵니다.",
+            "like": 0,
+            "img": "/img/rabbit.jpg",
+            "userId": "2"
+        },
+        {
+            "id": "3",
+            "contents": "반갑습니다.",
+            "like": 0,
+            "img": "/img/rabbit2.jpg",
+            "userId": "2"
+        }
+    ],
+    "comments": [
+        {
+            "id": "1",
+            "contents": "안녕하세요, 윤종신님~",
+            "postId": "1",
+            "userId": "2"
+        },
+        {
+            "id": "2",
+            "contents": "토끼와 관련된 노래인가봐요",
+            "postId": "1",
+            "userId": "2"
+        }
+    ]
+}

@@ -1,0 +1,58 @@
+/* Flex 버전 */
+
+/* 전체 뉴스 리스트 컨테이너 */
+.news-list {
+    display: flex;
+    flex-wrap: wrap; /* 줄 바꿈 허용 */
+    gap: 20px; /* 뉴스 항목 간의 간격 */
+    padding: 20px; /* 전체 컨테이너 여백 */
+  }
+  
+  /* 각 뉴스 항목 스타일 */
+  .news-items {
+    background-color: #f4f4f4; /* 배경색 */
+    border-radius: 10px; /* 모서리 둥글게 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 그림자 효과 */
+    transition: transform 0.2s; /* 호버 시 부드러운 이동 효과 */
+    overflow: hidden; /* 내부 콘텐츠가 넘치지 않도록 설정 */
+    flex: 1 1 calc(33.333% - 20px); /* 한 줄에 3개씩 배치, 간격 고려 */
+    max-width: calc(33.333% - 20px); /* 최대 너비 설정 */
+  }
+  
+  .news-items:hover {
+    transform: scale(1.02); /* 호버 시 살짝 확대 */
+  }
+  
+  /* 내부 컨테이너 스타일 */
+  .contain {
+    display: flex; /* 내부 요소를 가로로 배치 */
+    flex-direction: column; /* 세로 방향으로 배치 */
+    height: 100%; /* 내부 요소가 부모 요소의 높이를 가득 채우도록 설정 */
+  }
+  
+  /* 썸네일 이미지 스타일 */
+  .thumbnail img {
+    width: 100%; /* 이미지의 너비를 부모 요소에 맞춤 */
+    height: auto; /* 이미지 비율을 유지 */
+    border-bottom: 1px solid #ddd; /* 이미지 아래에 구분선 추가 */
+  }
+  
+  /* 내용 스타일 */
+  .contents {
+    padding: 15px; /* 내부 여백 */
+    flex: 1; /* 남은 공간을 차지하도록 설정 */
+  }
+  
+  .contents h4 {
+    margin: 0 0 10px; /* 제목의 여백 설정 */
+    font-size: 1.2em; /* 제목의 크기 설정 */
+    color: #333; /* 제목 색상 */
+  }
+  
+  /* 링크 스타일 */
+  a {
+    text-decoration: none; /* 밑줄 제거 */
+    color: inherit; /* 기본 색상을 상속받도록 설정 */
+  }
+  
+
