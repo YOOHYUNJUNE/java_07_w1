@@ -14,7 +14,7 @@ import { useState } from "react";
             password_chk: ""
         });
         const {email, nickname, password, password_chk} = form;
-        const [isDuplicate, setIsDuplicate] = useState(true);
+        const [isDuplicate, setIsDuplicate] = useState(false);
         const [errors, setErrors] = useState({});
 
         const handleDuplicate = async() => {
@@ -80,7 +80,7 @@ import { useState } from "react";
                 if (res.status === 201) {
                     alert('회원가입 완료')
                 } else {
-                    throw Error("회원가입 실패")
+                    throw new Error("회원가입 실패")
                 }
             } catch (error) {
                 console.error(error)
@@ -88,7 +88,7 @@ import { useState } from "react";
                 handleReset();
             }
 
-        } // validate()
+        }
         
     }
 
