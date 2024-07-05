@@ -2,7 +2,9 @@ import { Typography } from "@mui/material"
 import PostList from "../timeline/PostList";
 import { useEffect, useReducer } from "react";
 import { postReducer } from "../../hooks/reducer";
-import axios from "axios";
+import PostWrite from "../timeline/PostWrite";
+import { postApi } from "../../api/services/posts";
+import { userApi } from "../../api/services/users";
 
 
 const TimeLine = () => {
@@ -10,11 +12,11 @@ const TimeLine = () => {
 
     const getPosts = async() => {
         try { // 총 4번 요청
-            const res = await axios.get (`${process.env.REACT_APP_SERVER_ADDR}/posts`);
+            const res = await postApi.getPosts();
             const posts = res.data;
             const postList = [];
             for (let post of posts) {
-                const res2 = await axios.get(`${process.env.REACT_APP_SERVER_ADDR}/users/${post.userId}`);
+                const res2 = await userApi.getUser(post.userId)
                 post.user = res2.data;
                 postList.push(post);
             }
@@ -36,7 +38,8 @@ const TimeLine = () => {
     return ( 
         <>
             <Typography variant="h4">타임라인</Typography>
-            <PostList posts={posts}></PostList>
+            <PostWrite dispatch={dispatch}></PostWrite>
+            <PostList posts={posts} ></PostList>
         </>
      );
 }

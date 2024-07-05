@@ -3,6 +3,7 @@ import axios from "axios";
 import { useState } from "react";
 import styled from '@emotion/styled';
 import { Box, FormControl, IconButton, Button, InputAdornment, InputLabel, OutlinedInput, TextField, Typography, FormGroup } from "@mui/material";
+import { userApi } from "../../api/services/users";
 
 
     const SignUp = () => {
@@ -29,10 +30,10 @@ import { Box, FormControl, IconButton, Button, InputAdornment, InputLabel, Outli
 
         const handleDuplicate = async() => {
             if (email.trim()) {
-                const url = `${process.env.REACT_APP_SERVER_ADDR}/users?email=${email}`;
-                
+
                 try {
-                    const res = await axios.get(url);
+                    const res = await userApi.getUserByEmail(email);
+                    
                     if (!res.data.length) {
                         setErrors({});
                         setIsDuplicate(true);
@@ -96,11 +97,10 @@ import { Box, FormControl, IconButton, Button, InputAdornment, InputLabel, Outli
 
         // if(!validate()) {return}
         if (validate() && isDuplicate) {
-
-            const url = `${process.env.REACT_APP_SERVER_ADDR}/users`;
             const user = {email, nickname, password};
             try {
-                const res = await axios.post(url, user)
+                const res = await userApi.postUser(user);
+                
                 if (res.status === 201) {
                     alert('회원가입 완료')
                 } else {

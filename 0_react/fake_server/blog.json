@@ -41,6 +41,135 @@
       "email": "1234",
       "nickname": "1234",
       "password": "4321"
+    },
+    {
+      "id": "9826"
+    },
+    {
+      "id": "d596"
+    },
+    {
+      "id": "6367"
+    },
+    {
+      "id": "a8fb"
+    },
+    {
+      "id": "2085"
+    },
+    {
+      "id": "8e44"
+    },
+    {
+      "id": "0973"
+    },
+    {
+      "id": "264e"
+    },
+    {
+      "id": "35c9"
+    },
+    {
+      "id": "e030"
+    },
+    {
+      "id": "d1df"
+    },
+    {
+      "id": "32bc"
+    },
+    {
+      "id": "def6"
+    },
+    {
+      "id": "b3f5"
+    },
+    {
+      "id": "f010"
+    },
+    {
+      "id": "352d"
+    },
+    {
+      "id": "15fd"
+    },
+    {
+      "id": "e6c7"
+    },
+    {
+      "id": "2e46"
+    },
+    {
+      "id": "4fe9"
+    },
+    {
+      "id": "b1e4"
+    },
+    {
+      "id": "407f"
+    },
+    {
+      "id": "aa35"
+    },
+    {
+      "id": "69db"
+    },
+    {
+      "id": "13a7"
+    },
+    {
+      "id": "05fb"
+    },
+    {
+      "id": "e8ca"
+    },
+    {
+      "id": "c2ba"
+    },
+    {
+      "id": "d18a"
+    },
+    {
+      "id": "6d12"
+    },
+    {
+      "id": "7bfe"
+    },
+    {
+      "id": "c083"
+    },
+    {
+      "id": "870e"
+    },
+    {
+      "id": "9c28"
+    },
+    {
+      "id": "957e"
+    },
+    {
+      "id": "b3a5"
+    },
+    {
+      "id": "9178"
+    },
+    {
+      "id": "cceb"
+    },
+    {
+      "id": "e493"
+    },
+    {
+      "id": "889e"
+    },
+    {
+      "id": "917c"
+    },
+    {
+      "id": "e3ee"
+    },
+    {
+      "id": "b1c1"
     }
   ],
   "posts": [
@@ -48,22 +177,162 @@
       "id": "1",
       "contents": "안녕하세요.",
       "like": 0,
-      "img": ["/img/rabbit2.jpg", "/img/아메리카노_아이스.jpg", "/img/카페라떼_아이스.jpg", "/img/스무디_딸기.jpg", "/img/스무디_바나나.jpg", "/img/콜드브루.jpg", "/img/콜드브루_디카페인.jpg"],
+      "img": [
+        "/img/rabbit2.jpg",
+        "/img/아메리카노_아이스.jpg",
+        "/img/카페라떼_아이스.jpg",
+        "/img/스무디_딸기.jpg",
+        "/img/스무디_바나나.jpg",
+        "/img/콜드브루.jpg",
+        "/img/콜드브루_디카페인.jpg"
+      ],
       "userId": "1"
     },
     {
       "id": "2",
       "contents": "내일 신곡 나옵니다.내일 신곡 나옵니다.내일 신곡 나옵니다.내일 신곡 나옵니다.",
       "like": 0,
-      "img": ["/img/콜드브루_디카페인.jpg", "/img/콜드브루.jpg", "/img/스무디_바나나.jpg"],
+      "img": [
+        "/img/콜드브루_디카페인.jpg",
+        "/img/콜드브루.jpg",
+        "/img/스무디_바나나.jpg"
+      ],
       "userId": "2"
     },
     {
       "id": "3",
       "contents": "반갑습니다.반갑습니다.반갑습니다.반갑습니다.반갑습니다.반갑습니다.",
       "like": 0,
-      "img": ["/img/카페라떼_핫.jpg"],
+      "img": [
+        "/img/카페라떼_핫.jpg"
+      ],
       "userId": "2"
+    },
+    {
+      "id": "42ab",
+      "userId": "1",
+      "like": "0",
+      "img": [],
+      "contents": "ㄻㄴㅇㄻㄴㅇ"
+    },
+    {
+      "id": "0df4",
+      "userId": "1",
+      "like": "0",
+      "img": [],
+      "contents": "ㄻㄴㅇㄻㄴㅇ"
+    },
+    {
+      "id": "3854",
+      "userId": "1",
+      "like": "0",
+      "img": [],
+      "contents": "421341234321ㅇㄴㄻㅇㄹ"
+    },
+    {
+      "id": "eb25",
+      "userId": "1",
+      "like": "0",
+      "img": [],
+      "contents": "금요일에 만나요"
+    },
+    {
+      "id": "9d01",
+      "userId": "1",
+      "like": "0",
+      "img": [],
+      "contents": "1234"
+    },
+    {
+      "id": "7b4b",
+      "userId": "1",
+      "like": "0",
+      "img": [],
+      "contents": "ㄻㄴㅇㄹ",
+      "user": {
+        "id": "1",
+        "email": "IU@naver.com",
+        "nickname": "아이유",
+        "password": "1234"
+      }
+    },
+    {
+      "id": "a1bb",
+      "userId": "1",
+      "like": "0",
+      "img": [],
+      "contents": "ㄻㄴㅇㄹㄹㅇㄴㅁㄻㄴㅇ",
+      "user": {
+        "id": "1",
+        "email": "IU@naver.com",
+        "nickname": "아이유",
+        "password": "1234"
+      }
+    },
+    {
+      "id": "a017",
+      "userId": "1",
+      "like": "0",
+      "img": [],
+      "contents": "ㄻㄴㅇㄹㄹㅇㄴㅁㄻㄴㅇ",
+      "user": {
+        "id": "1",
+        "email": "IU@naver.com",
+        "nickname": "아이유",
+        "password": "1234"
+      }
+    },
+    {
+      "id": "2342",
+      "userId": "1",
+      "like": "0",
+      "img": [],
+      "contents": "ㄻㄴㅇㄹㄹㅇㄴㅁㄻㄴㅇ",
+      "user": {
+        "id": "1",
+        "email": "IU@naver.com",
+        "nickname": "아이유",
+        "password": "1234"
+      }
+    },
+    {
+      "id": "82be",
+      "userId": "1",
+      "like": "0",
+      "img": [],
+      "contents": "굿굿",
+      "user": {
+        "id": "1",
+        "email": "IU@naver.com",
+        "nickname": "아이유",
+        "password": "1234"
+      }
+    },
+    {
+      "id": "7a52",
+      "userId": "1",
+      "like": "0",
+      "img": [],
+      "contents": "토요일에 만나요",
+      "user": {
+        "id": "1",
+        "email": "IU@naver.com",
+        "nickname": "아이유",
+        "password": "1234"
+      }
+    },
+    {
+      "id": "92de",
+      "userId": "1",
+      "like": "0",
+      "img": [],
+      "contents": "일요일에도 만나요",
+      "user": {
+        "id": "1",
+        "email": "IU@naver.com",
+        "nickname": "아이유",
+        "password": "1234"
+      }
     }
   ],
   "comments": [
