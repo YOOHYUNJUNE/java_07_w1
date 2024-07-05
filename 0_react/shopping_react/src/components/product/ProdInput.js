@@ -39,7 +39,7 @@ const ProdInput = ({dispatch}) => {
 
 
     return ( 
-        <div>
+        <div className="addProdBox">
             이름: <input type="text" name='name' value={newProduct.name} onChange={handleChange}></input>
             <br/>
             가격 : <input type="number" name='price' min="0" step="1000" value={newProduct.price} onChange={handleChange}></input>
@@ -59,5 +59,8 @@ const ProdBtn = styled.button`
     border-radius: 3px;
     cursor: pointer;
 `
+
+
+
  
 export default ProdInput;

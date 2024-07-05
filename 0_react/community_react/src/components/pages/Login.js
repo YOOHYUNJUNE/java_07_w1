@@ -1,8 +1,8 @@
-import { useState } from "react";
-import styled from "styled-components";
 import useInputs from "../../hooks/useInputs";
 import axios from "axios";
-import { Button } from "../ui/Button";
+// import { Button } from "../ui/Button";
+import styled from '@emotion/styled';
+import { Button, FormControl, OutlinedInput } from "@mui/material";
 
 const Login = () => {
 
@@ -39,15 +39,24 @@ const Login = () => {
     return ( 
         <>
             <h1>로그인 화면</h1>
-            <StyledLoginBox>
-                <div className="input-group">
-                    <input type="email" name="email" value={email} onChange={handleChange}></input>
-                    <input type="password" name="password" value={password} onChange={handleChange}></input>
-                </div>
-                <Button color="#a151e5" onClick={handleLogin}>로그인</Button>
-                {/* <button onClick={handleReset}>초기화</button> */}
 
-            </StyledLoginBox>
+            <form>
+                <FormControl sx={{width: '100%', display: 'block'}}>
+                    <OutlinedInput type="email" name="email" value={email} onChange={handleChange}></OutlinedInput>
+                </FormControl>
+                <FormControl sx={{width: '100%', display: 'block'}}>
+                    <OutlinedInput type="password" name="password" value={password} onChange={handleChange}></OutlinedInput>
+                </FormControl>
+                
+                <Button variant="contained" type="button" 
+                    sx={{display: 'block', width: '100%', marginTop: '10px'}}
+                    onClick={handleLogin}
+                >로그인</Button>
+
+
+            </form>
+
+
         </>
      );
 }

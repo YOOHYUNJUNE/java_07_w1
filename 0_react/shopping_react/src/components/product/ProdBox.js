@@ -34,8 +34,6 @@ const ProdBox = ({prod, dispatch}) => {
     // 수정 후 완료 버튼
     const handleUpdate = async() => {
         try{
-
-            
             // 반복 변경 시 id를 인식하게 함
             const editProduct = {...product, id: prod.id}
             
@@ -43,12 +41,11 @@ const ProdBox = ({prod, dispatch}) => {
             const res = await axios.put(`http://localhost:8080/products/${prod.id}`, editProduct)
 
             // 즉시 반영
+            dispatch({type: "EDIT_PRODUCT", payload: editProduct})
             // const updateProducts = products.map(p => (p.id === prod.id ? editProduct : p));
             // setProducts(updateProducts);
-            dispatch({type: "EDIT_PRODUCT", payload: editProduct})
-
-
             setIsUpdateMode(false)
+            alert('수정되었습니다.')
         } catch (err) {
             console.error(err);
         }
@@ -58,14 +55,20 @@ const ProdBox = ({prod, dispatch}) => {
     // 삭제버튼을 누르면 서버에 신호
     const handleDelete = async() => {
         try {
-            const res = await axios.delete(`http://localhost:8080/products/${prod.id}`);
-            // 즉시 반영
-            dispatch({type: "DELETE_PRODUCT", payload: prod.id})
+
+            const userConfirmed = window.confirm("정말 삭제하시겠습니까?")
+            if (userConfirmed) {
+                const res = await axios.delete(`http://localhost:8080/products/${prod.id}`);
+                // // 즉시 반영
+                dispatch({type: "DELETE_PRODUCT", payload: prod.id})
+                alert('삭제되었습니다.')
+            } else {
+                // alert('취소되었습니다.')
+            }
             // const newProducts = products.filter(p => {
             //     return p.id != prod.id
             // });
             // setProducts(newProducts)
-
         } catch (err) {
             console.error(err)
         }
@@ -95,9 +98,11 @@ const ProdBox = ({prod, dispatch}) => {
                         ?
                         <>
                         {/* 수정모드 */}
-                        <div>이름:<input type="text" value={product.name} name='name' onChange={handleChange}></input></div>
-                        <div>가격:<input type="number" min="0" step="1000" value={product.price} name='price' onChange={handleChange}></input></div>
-                        <div>이름:<textarea type="text" value={product.description} name='description' onChange={handleChange}></textarea></div>
+                        <div>
+                            <div>이름 : <input type="text" value={product.name} name='name' onChange={handleChange}></input></div>
+                            <div>가격 : <input type="number" min="0" step="1000" value={product.price} name='price' onChange={handleChange}></input></div>
+                            <div>설명 : <textarea type="text" value={product.description} name='description' onChange={handleChange}></textarea></div>
+                        </div>
                         
                         <ProdBtn onClick={handleUpdate}>완료</ProdBtn>
                         </>                    

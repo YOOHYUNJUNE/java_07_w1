@@ -1,6 +1,7 @@
-import { styled } from "styled-components";
 import { Link } from 'react-router-dom';
 import { BsAndroid2 } from "react-icons/bs"; // react icon
+import styled from '@emotion/styled';
+
 
 
 const Header = () => {

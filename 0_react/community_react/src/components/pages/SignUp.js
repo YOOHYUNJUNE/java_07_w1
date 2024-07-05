@@ -1,8 +1,8 @@
-import styled from "styled-components";
 import useInputs from "../../hooks/useInputs";
-import { Button } from "../ui/Button";
 import axios from "axios";
 import { useState } from "react";
+import styled from '@emotion/styled';
+import { Box, FormControl, IconButton, Button, InputAdornment, InputLabel, OutlinedInput, TextField, Typography } from "@mui/material";
 
 
     const SignUp = () => {
@@ -16,6 +16,16 @@ import { useState } from "react";
         const {email, nickname, password, password_chk} = form;
         const [isDuplicate, setIsDuplicate] = useState(false);
         const [errors, setErrors] = useState({});
+
+        // 비밀번호 보이는 토글
+        const [showPassword, setShowPassword] = useState(false);
+        const handleTogglePassword = () => setShowPassword(!showPassword);
+        const handleMouseDownPassword = (e) => e.preventDefault();
+
+        const [showPassword_chk, setShowPassword_chk] = useState(false);
+        const handleTogglePassword_chk = () => setShowPassword_chk(!showPassword_chk);
+        const handleMouseDownPassword_chk = (e) => e.preventDefault();
+
 
         const handleDuplicate = async() => {
             if (email.trim()) {
@@ -96,82 +106,106 @@ import { useState } from "react";
     return ( 
         // 회원가입시 {email, nickname, password, password_chk}
         <>
-            <h1>회원가입</h1>
-            <JoinForm>
-                <div className="input-group">
-                    <label htmlFor="email">이메일</label>
-                    <div>
-                        <input type="email" id="email" name="email" value={email} onChange={handleChange}></input>
-                        {errors.email && <ErrorMsg>{errors.email}</ErrorMsg>}
-                        {isDuplicate && <SuccessMsg>사용 가능한 이메일입니다.</SuccessMsg>}
-                    </div>
-                    <Button type="email" color="#9a9a9a" onClick={handleDuplicate}>중복확인</Button>
-                </div>
-                <div className="input-group">
-                    <label htmlFor="nickname">닉네임</label>
-                    <div>
-                        <input id="nickname" name="nickname" value={nickname} onChange={handleChange}></input>
-                        {errors.nickname && <ErrorMsg>{errors.nickname}</ErrorMsg>}
-                    </div>
-                </div>
-                <div className="input-group">
-                    <label htmlFor="password">비밀번호</label>
-                    <div>
-                        <input type="password" id="password" name="password" value={password} onChange={handleChange}></input>
-                        {errors.password && <ErrorMsg>{errors.password}</ErrorMsg>}
-                    </div>
-                </div>
-                <div className="input-group">
-                    <label htmlFor="password_chk">비밀번호 확인</label>
-                    <div>
-                        <input type="password" id="password_chk" name="password_chk" value={password_chk} onChange={handleChange}></input>
-                        {errors.password_chk && <ErrorMsg>{errors.password_chk}</ErrorMsg>}
-                    </div>
+            <Typography variant="h4">회원가입</Typography>
+            <Box 
+                component={'form'}
+                my={4}
+                p={2}
+                borderRadius={4}
+                boxShadow={'0 0 4px gray'}
+                sx={{
+                    '& > :not(style)' : {m : 1, width: '25ch'}
+                }}
+                noValidate
+                autoComplete='off'
+            >
 
-                </div>
-                <div className="btn-group">
-                    <Button type="button" onClick={() => {handleReset(); setErrors({});}} color="#ff8282">초기화</Button>
-                    <Button color="#5f97f9" onClick={handleSignUp}>회원가입</Button>
-                </div>
+                <TextField
+                    label='이메일'
+                    variant="outlined"
+                    sx={{display: 'block'}}
+                    autoFocus
+                    required
+                    type="email" id="email" name="email" value={email} onChange={handleChange}
+                    error={errors.email ? true : false}
+                    helperText={errors.email}
+                ></TextField>
 
-            </JoinForm>
+                <TextField
+                    label='닉네임'
+                    variant="outlined"
+                    sx={{display: 'block'}}
+                    required
+                    type="nickname" id="nickname" name="nickname" value={nickname} onChange={handleChange}
+                    error={errors.email ? true : false}
+                    helperText={errors.email}
+                ></TextField>
+
+                <FormControl sx={{m:1, width: '100%', display: 'block'}} variant="outlined">
+                    <InputLabel htmlFor="password">비밀번호 *</InputLabel>
+                    <OutlinedInput 
+                        type={showPassword ? 'text' : 'password'} id="password" name="password" value={password} onChange={handleChange}
+                        required
+                        autoComplete="new-password"
+                        label='비밀번호'
+                        endAdornment={
+                            <InputAdornment position="end">
+                                <IconButton
+                                    aria-label="toggle password visibility"
+                                    onClick={handleTogglePassword}
+                                    onMouseDown={handleMouseDownPassword}
+                                    edge="end"
+                                >
+                                    {showPassword ? "🌝" : "🌚"}
+                                </IconButton>
+                            </InputAdornment>
+                        }
+                        error={errors.password ? true : false}
+                    ></OutlinedInput>
+                    
+                </FormControl>
+                <FormControl sx={{m:1, width: '100%', display: 'block'}} variant="outlined">
+                    <InputLabel htmlFor="password_chk">비밀번호 확인 *</InputLabel>
+                    <OutlinedInput 
+                        type={showPassword_chk ? 'text' : 'password'} id="password_chk" name="password_chk" value={password_chk} onChange={handleChange}
+                        required
+                        autoComplete="new-password_chk"
+                        label='비밀번호 확인'
+                        endAdornment={
+                            <InputAdornment position="end">
+                                <IconButton
+                                    aria-label="toggle password_chk visibility"
+                                    onClick={handleTogglePassword_chk}
+                                    onMouseDown={handleMouseDownPassword_chk}
+                                    edge="end"
+                                >
+                                    {showPassword_chk ? "🌝" : "🌚"}
+                                </IconButton>
+                            </InputAdornment>
+                        }
+                        error={errors.password_chk ? true : false}
+                        
+                    ></OutlinedInput>
+                    <ErrorMsg>{errors.password || errors.password_chk}</ErrorMsg>
+                </FormControl>
+
+                <Button onClick={handleSignUp}>가입</Button>
+
+            </Box>
+
         </>
      );
 }
 
-const JoinForm = styled.form`
-    /* border: 1px solid black; */
-    display: flex;
-    flex-direction: column;
-    .input-group {
-        display: flex;
-        justify-content: space-between;
-        width: 90%;
-        margin: 1rem auto;
-        height: 2rem;
-
-        label {
-            margin-right: 1rem;
-        }
-
-        input {
-            border: none;
-            border-radius: 4px;
-            background-color: #b8f2f9;
-            padding: 0.8rem;
-        }
-    }
-
-    .btn-group {
-        padding-top: 2rem;
-        margin: 0 auto;
-    }
-`
-
 const ErrorMsg = styled.div`
-    color: #ff5555;
-    font-size: 0.8rem;
-    margin-top: 0.2rem;
+    color: #d32f2f;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 400;
+    font-size: 0.75rem;
+    line-height: 1.66;
+    letter-spacing: 0.03333em;
+    text-align: left;
+    margin: 3px 14px 0 14px;
 `
 
 const SuccessMsg = styled.div`
