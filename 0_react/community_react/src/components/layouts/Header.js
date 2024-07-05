@@ -15,12 +15,17 @@ const Header = () => {
             <Link to="/"><BsAndroid2/></Link>
             <nav>
                 <Link to="/">HOME</Link>
+
+                <Link to="/post">타임라인</Link>
+                <Link to="/search">Search</Link>
+
+
                 {/* 로그인 후에는 버튼을 로그아웃으로 변경 */}
                 {
                     loginUser ?
                     <>
                     <Link to='/info'>{loginUser}</Link>
-                    <Link to='/logout'>LOGOUT</Link>
+                    {/* <Link to='/logout'>LOGOUT</Link> */}
                     </>
                     :
 

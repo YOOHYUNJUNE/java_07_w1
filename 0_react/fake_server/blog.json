@@ -13,22 +13,34 @@
       "password": "1234"
     },
     {
-      "id": "9205",
-      "email": "YOO@naver.com",
-      "nickname": "YOO",
+      "id": "3612",
+      "email": "IU@naver.com2",
+      "nickname": "아이유2",
       "password": "1234"
     },
     {
-      "id": "0628",
-      "email": "111",
-      "nickname": "111",
-      "password": "111"
+      "id": "bc10",
+      "email": "IU@naver.com3",
+      "nickname": "아이유3",
+      "password": "1234"
     },
     {
-      "id": "5b6f",
-      "email": "fasdfdas",
-      "nickname": "fdsaf",
+      "id": "a305",
+      "email": "IU@naver.com",
+      "nickname": "아이유",
       "password": "1234"
+    },
+    {
+      "id": "1d3a",
+      "email": "IU2@naver.com",
+      "nickname": "아이유test",
+      "password": "1234"
+    },
+    {
+      "id": "0bc9",
+      "email": "1234",
+      "nickname": "1234",
+      "password": "4321"
     }
   ],
   "posts": [
@@ -36,21 +48,21 @@
       "id": "1",
       "contents": "안녕하세요.",
       "like": 0,
-      "img": "",
+      "img": ["/img/rabbit2.jpg", "/img/아메리카노_아이스.jpg", "/img/카페라떼_아이스.jpg", "/img/스무디_딸기.jpg", "/img/스무디_바나나.jpg", "/img/콜드브루.jpg", "/img/콜드브루_디카페인.jpg"],
       "userId": "1"
     },
     {
       "id": "2",
-      "contents": "내일 신곡 나옵니다.",
+      "contents": "내일 신곡 나옵니다.내일 신곡 나옵니다.내일 신곡 나옵니다.내일 신곡 나옵니다.",
       "like": 0,
-      "img": "/img/rabbit.jpg",
+      "img": ["/img/콜드브루_디카페인.jpg", "/img/콜드브루.jpg", "/img/스무디_바나나.jpg"],
       "userId": "2"
     },
     {
       "id": "3",
-      "contents": "반갑습니다.",
+      "contents": "반갑습니다.반갑습니다.반갑습니다.반갑습니다.반갑습니다.반갑습니다.",
       "like": 0,
-      "img": "/img/rabbit2.jpg",
+      "img": ["/img/카페라떼_핫.jpg"],
       "userId": "2"
     }
   ],
